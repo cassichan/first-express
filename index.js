@@ -38,10 +38,10 @@ app.get('/students', (request, response) => {
   response.send(students); 
 });
 
-//students/Mason
+//students/Mason              :fName is the url parameter/ name is arbitrary
 app.get('/students/:fName', (request, response) => {
     // (stud.firstName = single students firstName) that matches the request param firstName (fName)
-    const student = students.find(stud => stud.firstName === request.params.fName)    
+    const student = students.find(stud => stud.firstName === request.params.fName)   //stud name is arbitrary 
      //Generate response and send message back if student not found/success is false
     if(!student) {
         response.status(404).send({message: 'Student not found', success: false});
